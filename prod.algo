@@ -1,0 +1,32 @@
+FUNCTION prodscalaire(a,b:ARRAY_OF INTEGER[];) : INTEGER;
+VAR
+    i:INTEGER;
+    sum: INTEGER;
+BEGIN
+    FOR i FROM 1 TO a.length STEP 1  DO
+        sum= sum+a[i]*b[i]
+    END_FOR
+    RETURN sum ;
+END
+
+
+PROCEDURE orth
+VAR
+    T1 : ARRAY_OF INTEGER[3]:=[2,3,5];
+
+    T2 : ARRAY_OF INTEGER[3]:=[2,4,5];
+    i : INTEGER :=0;
+BEGIN
+    IF (T1.length <> T2.length) THEN
+        write("error");
+    END_IF
+    i := prodscalaire(T1,T2);
+    IF (i=0) THEN
+        write("orth");
+    
+        ELSE
+            write ("not orth");
+       END_IF
+    END_IF
+
+END
